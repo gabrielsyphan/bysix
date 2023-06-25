@@ -39,13 +39,13 @@ public class VisualNutsImplTest {
         String output = outputStream.toString();
 
         // Count the occurrences of each word
-        int countVisualNuts = contarOcorrencias(output, "\nVisual Nuts\n");
+        int countVisualNuts = countOcurrence(output, "\nVisual Nuts\n");
         assertEquals(33, countVisualNuts);
 
-        int countNuts = contarOcorrencias(output, "\nNuts\n");
+        int countNuts = countOcurrence(output, "\nNuts\n");
         assertEquals(67, countNuts);
 
-        int countVisual = contarOcorrencias(output, "\nVisual\n");
+        int countVisual = countOcurrence(output, "\nVisual\n");
         assertEquals(133, countVisual);
     }
 
@@ -59,7 +59,7 @@ public class VisualNutsImplTest {
         assertThrows(IllegalArgumentException.class, () -> visualNuts.checkNumbers(0));
     }
 
-    private int contarOcorrencias(String texto, String palavra) {
+    private int countOcurrence(String texto, String palavra) {
         int count = 0;
         Pattern pattern = Pattern.compile(palavra);
         Matcher matcher = pattern.matcher(texto);
