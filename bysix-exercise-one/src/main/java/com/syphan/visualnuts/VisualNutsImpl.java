@@ -13,11 +13,14 @@ public class VisualNutsImpl implements VisualNuts {
         checkIfValid(number);
 
         for(int i = 1; i <= number; i++) {
-            if(checkIfDivisibleByThreeAndFive(i)) {
+            boolean isDivisibleByThree = checkIfDivisibleByThree(i);
+            boolean isDivisibleByFive = checkIfDivisibleByFive(i);
+
+            if(isDivisibleByThree && isDivisibleByFive) {
                 System.out.println("Visual Nuts");
-            } else if(checkIfDivisibleByFive(i)) {
+            } else if(isDivisibleByFive) {
                 System.out.println("Nuts");
-            } else if(checkIfDivisibleByThree(i)) {
+            } else if(isDivisibleByThree) {
                 System.out.println("Visual");
             } else {
                 System.out.println(i);
@@ -39,10 +42,6 @@ public class VisualNutsImpl implements VisualNuts {
 
     private boolean checkIfDivisibleByFive(int number) {
         return number % 5 == 0;
-    }
-
-    private boolean checkIfDivisibleByThreeAndFive(int number) {
-        return number % 3 == 0 && number % 5 == 0;
     }
 
     private boolean checkIfIsNegative(int number) {

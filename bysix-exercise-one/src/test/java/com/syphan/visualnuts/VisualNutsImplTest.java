@@ -35,7 +35,7 @@ public class VisualNutsImplTest {
         // Call the method
         assertDoesNotThrow(() -> visualNuts.checkNumbers(500));
 
-        // Get the output frin the ByteArrayOutputStream
+        // Get the output from the ByteArrayOutputStream
         String output = outputStream.toString();
 
         // Count the occurrences of each word
